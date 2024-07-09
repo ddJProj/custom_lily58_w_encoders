@@ -12,7 +12,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-
     macros {
         mac_gui_lay1: mac_gui_lay1 {
             compatible = "zmk,behavior-macro";
@@ -178,6 +177,23 @@
             bindings = <&kp>, <&kp>;
         };
 
+        Layer_3_TD: Layer_3_TD {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER_3_TD";
+            #binding-cells = <0>;
+            bindings = <&mo 3>, <&mo 2>, <&tog 3>;
+
+            tapping-term-ms = <250>;
+        };
+
+        ALT_AND_LAY1: ALT_AND_LAY1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT_AND_LAY1";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT>, <&none>, <&tog 0>;
+
+            tapping-term-ms = <250>;
+        };
     };
 
     keymap {
@@ -191,18 +207,19 @@
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
-        display-name = "Base";
+            display-name = "Base";
             bindings = <
-&kp GRAVE   &kp N1          &kp N2     &kp N3      &kp N4         &kp N5                                         &kp N6         &kp N7     &kp N8        &kp N9  &kp N0  &lay2_and_alt
-&kp ENTER   &kp APOSTROPHE  &kp COMMA  &kp PERIOD  &kp P          &kp Y                                          &kp F          &kp G      &kp C         &kp R   &kp L   &kp SLASH
-&kp ESCAPE  &kp A           &kp O      &kp E       &kp U          &kp I                                          &kp D          &kp H      &kp T         &kp N   &kp S   &kp MINUS
-&kp TAB     &kp SEMICOLON   &kp Q      &kp J       &kp K          &kp X       &kp CAPSLOCK     &kp C_MUTE        &kp B          &kp M      &kp W         &kp V   &kp Z   &kp EQUAL
-                                       &mo 3       &kp BACKSPACE  &shft_mod1  &gui_and_lay1    &cntrl_andlayer1  &mod_low_shft  &kp SPACE  &kp LEFT_ALT
+&kp GRAVE   &kp N1          &kp N2     &kp N3       &kp N4         &kp N5                                         &kp N6         &kp N7     &kp N8         &kp N9  &kp N0  &lay2_and_alt
+&kp ENTER   &kp APOSTROPHE  &kp COMMA  &kp PERIOD   &kp P          &kp Y                                          &kp F          &kp G      &kp C          &kp R   &kp L   &kp SLASH
+&kp ESCAPE  &kp A           &kp O      &kp E        &kp U          &kp I                                          &kp D          &kp H      &kp T          &kp N   &kp S   &kp MINUS
+&kp TAB     &kp SEMICOLON   &kp Q      &kp J        &kp K          &kp X       &kp CAPSLOCK     &kp C_MUTE        &kp B          &kp M      &kp W          &kp V   &kp Z   &kp EQUAL
+                                       &Layer_3_TD  &kp BACKSPACE  &shft_mod1  &gui_and_lay1    &cntrl_andlayer1  &mod_low_shft  &kp SPACE  &ALT_AND_LAY1
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
-        Layer_1 {
+
+        utility_layer {
             bindings = <
 &trans  &trans     &trans     &trans     &trans     &trans                       &trans            &trans             &trans          &trans           &trans  &trans
 &trans  &trans     &trans     &trans     &trans     &trans                       &trans            &trans             &trans          &trans           &trans  &kp NON_US_BACKSLASH
@@ -211,9 +228,9 @@
                               &trans     &trans     &trans     &trans    &trans  &trans            &trans             &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            label = "Utility";
         };
-
 
         lower_layer {
             // ------------------------------------------------------------------------------------------------------------
@@ -223,7 +240,7 @@
             // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Lower";
+            display-name = "System";
             bindings = <
 &bt BT_CLR_ALL  &bt BT_NXT     &trans       &trans             &trans           &ext_power EP_TOG                    &ext_power EP_ON  &ext_power EP_TOG  &trans  &trans         &trans         &trans
 &kp F1          &kp F2         &kp F3       &kp F4             &kp F5           &kp F6                               &kp F7            &kp F8             &kp F9  &kp F10        &kp F11        &kp F12
@@ -232,10 +249,10 @@
                                             &trans             &trans           &trans             &trans    &trans  &trans            &trans             &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-raise_layer {
+        raise_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
@@ -243,7 +260,7 @@ raise_layer {
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Raise";
+            display-name = "Games";
             bindings = <
 &kp F8        &kp F9        &kp F2        &trans        &trans  &trans                    &trans       &trans    &trans    &trans     &trans  &trans
 &mkp LCLK     &kp UP        &kp F1        &kp F5        &trans  &none                     &kp N6       &kp N7    &kp UP    &kp N9     &kp N0  &trans
@@ -252,7 +269,7 @@ raise_layer {
                                           &trans        &trans  &trans  &trans    &trans  &trans       &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
