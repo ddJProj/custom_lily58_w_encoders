@@ -220,6 +220,7 @@
         };
 
         utility_layer {
+            display-name = "Utility";
             bindings = <
 &trans  &trans     &trans     &trans     &trans     &trans                       &trans            &trans             &trans          &trans           &trans  &trans
 &trans  &trans     &trans     &trans     &trans     &trans                       &trans            &trans             &trans          &trans           &trans  &kp NON_US_BACKSLASH
@@ -228,8 +229,7 @@
                               &trans     &trans     &trans     &trans    &trans  &trans            &trans             &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-            label = "Utility";
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
         lower_layer {
@@ -249,7 +249,7 @@
                                             &trans             &trans           &trans             &trans    &trans  &trans            &trans             &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>;
         };
 
         raise_layer {
