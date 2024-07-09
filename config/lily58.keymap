@@ -190,7 +190,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ALT_AND_LAY1";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&none>, <&tog 0>;
+            bindings = <&none>, <&kp LEFT_ALT>, <&tog 0>;
 
             tapping-term-ms = <250>;
         };
