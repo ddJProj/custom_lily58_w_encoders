@@ -163,20 +163,6 @@
             tapping-term-ms = <230>;
         };
 
-        sensor_rotate_right_encoder: sensor_rotate_right_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "SENSOR_ROTATE_RIGHT_ENCODER";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
-        };
-
-        right_encode_with_param: right_encode_with_param {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "RIGHT_ENCODE_WITH_PARAM";
-            #sensor-binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-        };
-
         Layer_3_TD: Layer_3_TD {
             compatible = "zmk,behavior-tap-dance";
             label = "LAYER_3_TD";
@@ -191,9 +177,35 @@
             label = "ALT_AND_BASE";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LEFT_ALT>, <&tog 0>;
-
             tapping-term-ms = <250>;
         };
+
+
+        /*
+         * Encoder defs:
+         * https://zmk.dev/docs/behaviors/sensor-rotate
+         * https://zmk.dev/docs/features/encoders
+         */
+
+        right_enc_vol: right_enc_vol {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
+        };
+
+        right_enc_page: right_enc_page {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp PG_DN>, <&kp PG_UP>;
+        };
+
+        right_enc_skip: right_enc_skip {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_PREV>, <&kp C_NEXT>;
+        };
+
+
     };
 
     keymap {
@@ -216,7 +228,7 @@
                                        &Layer_3_TD  &kp BACKSPACE  &shft_mod1  &gui_and_lay1    &mod_low_shft  &kp SPACE  &cntrl_andlayer1  &ALT_AND_BASE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&right_enc_vol>;
         };
 
         utility_layer {
@@ -228,8 +240,7 @@
 &trans  &kp LC(Y)  &kp LC(Z)  &kp LC(C)  &kp LC(V)  &kp LC(X)  &trans    &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans  &kp SLASH
                               &trans     &trans     &trans     &trans    &trans  &trans            &trans             &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&right_enc_page>;
         };
 
         lower_layer {
@@ -248,8 +259,7 @@
 &trans          &trans         &trans       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp K_MUTE         &trans    &trans  &trans            &trans             &trans  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2
                                             &trans             &trans           &trans             &trans    &trans  &trans            &trans             &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>;
+            sensor-bindings = <&right_enc_skip>;
         };
 
         raise_layer {
@@ -268,8 +278,7 @@
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_5  &trans  &none   &trans    &trans  &kp KP_PLUS  &trans    &trans    &trans     &trans  &trans
                                           &trans        &trans  &trans  &trans    &trans  &trans       &trans    &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&right_enc_vol>;
         };
     };
 };
