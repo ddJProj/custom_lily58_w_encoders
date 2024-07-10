@@ -10,10 +10,6 @@
     col-offset = <6>;
 };
 
-&right_encoder {
-    status = "okay";
-};
-
 &kscan0 {
     col-gpios
         = <&pro_micro 10 GPIO_ACTIVE_HIGH>
@@ -23,4 +19,31 @@
         , <&pro_micro 18 GPIO_ACTIVE_HIGH>
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>
         ;
+};
+
+&right_encoder {
+    status = "okay";
+};
+
+// QDEC configuration
+&pinctrl {
+    qdec_default: qdec_default {
+        group1 {
+            psels = <NRF_PSEL(QDEC_A, 0, 31)>,
+                    <NRF_PSEL(QDEC_B, 0, 22)>;
+            bias-pull-up;
+        };
+    };
+};
+
+encoder: &qdec0 {
+    status = "okay";
+    led-pre = <0>;
+    steps = <80>;
+    pinctrl-0 = <&qdec_default>;
+    pinctrl-names = "default";
+};
+
+&sensors {
+    triggers-per-rotation = <20>;
 };
