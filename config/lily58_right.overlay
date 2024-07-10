@@ -44,6 +44,10 @@ encoder: &qdec0 {
     pinctrl-names = "default";
 };
 
-&sensors {
-    triggers-per-rotation = <20>;
+/ {
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder>;
+        triggers-per-rotation = <20>;
+    };
 };
