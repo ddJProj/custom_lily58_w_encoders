@@ -177,9 +177,9 @@
             label = "ALT_AND_BASE";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LEFT_ALT>, <&tog 0>;
+
             tapping-term-ms = <250>;
         };
-
 
         /*
          * Encoder defs:
@@ -190,7 +190,9 @@
         right_enc_vol: right_enc_vol {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
+
+            label = "right_enc_vol";
         };
 
         right_enc_page: right_enc_page {
@@ -202,7 +204,9 @@
         right_enc_skip: right_enc_skip {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&kp C_PREV>, <&kp C_NEXT>;
+            bindings = <&kp F23>, <&kp F24>;
+
+            label = "right_enc_skip";
         };
 
         rot_kp: sensor_rotate_kp {
@@ -210,8 +214,6 @@
             #sensor-binding-cells = <2>;
             bindings = <&kp>, <&kp>;
         };
-
-
     };
 
     keymap {
@@ -233,7 +235,9 @@
 &kp TAB     &kp SEMICOLON   &kp Q      &kp J        &kp K          &kp X       &kp CAPSLOCK     &kp C_MUTE     &kp B      &kp M             &kp W          &kp V   &kp Z   &kp EQUAL
                                        &Layer_3_TD  &kp BACKSPACE  &shft_mod1  &gui_and_lay1    &mod_low_shft  &kp SPACE  &cntrl_andlayer1  &ALT_AND_BASE
             >;
+
             // sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
+
             sensor-bindings = <&right_enc_vol>;
         };
 
@@ -246,7 +250,9 @@
 &trans  &kp LC(Y)  &kp LC(Z)  &kp LC(C)  &kp LC(V)  &kp LC(X)  &trans    &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans  &kp SLASH
                               &trans     &trans     &trans     &trans    &trans  &trans            &trans             &trans
             >;
+
             // sensor-bindings = <&rot_kp PG_UP PG_DN>;
+
             sensor-bindings = <&right_enc_page>;
         };
 
@@ -266,7 +272,9 @@
 &trans          &trans         &trans       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp K_MUTE         &trans    &trans  &trans            &trans             &trans  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2
                                             &trans             &trans           &trans             &trans    &trans  &trans            &trans             &trans
             >;
+
             // sensor-bindings = <&rot_kp C_PREV C_NEXT>;
+
             sensor-bindings = <&right_enc_skip>;
         };
 
@@ -286,7 +294,9 @@
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_5  &trans  &none   &trans    &trans  &kp KP_PLUS  &trans    &trans    &trans     &trans  &trans
                                           &trans        &trans  &trans  &trans    &trans  &trans       &trans    &trans
             >;
+
             // sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
+
             sensor-bindings = <&right_enc_vol>;
         };
     };
