@@ -130,7 +130,7 @@
             label = "SHFT_MOD1";
             #binding-cells = <0>;
             tapping-term-ms = <275>;
-            bindings = <&kp LEFT_SHIFT>, <&mo 1>, <&mac_shift_lay1>;
+            bindings = <&kp LEFT_SHIFT>, <&mo 1>, <&kp LEFT_CONTROL>;
         };
 
         cntrl_andlayer1: cntrl_andlayer1 {
@@ -219,7 +219,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LAY3_AND_ALT";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&kp LEFT_ALT>, <&kp LS(LEFT_ALT)>;
+            bindings = <&mo 3>, <&kp LEFT_ALT>, <&kp LS(LEFT_CONTROL)>;
 
             tapping-term-ms = <230>;
         };
