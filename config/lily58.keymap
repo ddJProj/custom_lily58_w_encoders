@@ -285,10 +285,10 @@
 
             display-name = "System";
             bindings = <
-&bt BT_CLR_ALL  &bt BT_NXT     &trans       &trans             &out OUT_TOG     &ext_power EP_TOG                          &ext_power EP_ON  &ext_power EP_TOG  &trans  &trans         &trans         &trans
-&kp F1          &kp F2         &kp F3       &kp F4             &kp F5           &kp F6                                     &kp F7            &kp F8             &kp F9  &kp F10        &kp F11        &kp F12
-&trans          &kp PAGE_DOWN  &kp PAGE_UP  &kp C_PREVIOUS     &kp C_NEXT       &kp C_PP                                   &out OUT_USB      &trans             &trans  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2
-&trans          &trans         &trans       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp K_MUTE         &kp CAPSLOCK    &trans  &trans            &trans             &trans  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2
+&bt BT_CLR_ALL  &trans         &trans       &trans             &out OUT_TOG     &ext_power EP_TOG                          &ext_power EP_ON  &ext_power EP_TOG  &trans         &trans         &trans         &trans
+&kp F1          &kp F2         &kp F3       &kp F4             &kp F5           &kp F6                                     &kp F7            &kp F8             &kp F9         &kp F10        &kp F11        &kp F12
+&trans          &kp PAGE_DOWN  &kp PAGE_UP  &kp C_PREVIOUS     &kp C_NEXT       &kp C_PP                                   &out OUT_USB      &trans             &bt BT_DISC 3  &bt BT_DISC 2  &bt BT_DISC 1  &bt BT_DISC 0
+&bt BT_CLR      &bt BT_NXT     &trans       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp K_MUTE         &kp CAPSLOCK    &trans  &trans            &trans             &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0
                                             &trans             &trans           &trans             &trans          &trans  &trans            &trans             &trans
             >;
 
@@ -309,7 +309,7 @@
             bindings = <
 &mkp MB1  &mkp RCLK     &trans          &trans            &trans   &trans                    &trans       &trans    &trans    &trans     &trans  &trans
 &kp F6    &kp NUMBER_1  &kp NUMBER_3    &kp N5            &kp F10  &none                     &kp N6       &kp N7    &kp UP    &kp N9     &kp N0  &trans
-&kp F2    &kp F3        &kp F4          &kp F5            &kp F1   &none                     &trans       &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&kp F1    &kp F2        &kp F3          &kp F4            &kp F5   &none                     &trans       &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
 &mkp MB1  &kp SPACE     &kp LEFT_SHIFT  &kp LEFT_CONTROL  &trans   &none   &trans    &trans  &kp KP_PLUS  &trans    &trans    &trans     &trans  &trans
                                         &trans            &kp F9   &trans  &trans    &trans  &trans       &trans    &trans
             >;
