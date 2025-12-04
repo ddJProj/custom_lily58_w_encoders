@@ -233,6 +233,14 @@
 
             tapping-term-ms = <250>;
         };
+
+        right_enc_scroll: right_enc_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            label = "RIGHT_ENC_SCROLL";
+        };
     };
 
     keymap {
@@ -316,7 +324,7 @@
 
             // sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
-            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+            sensor-bindings = <&right_enc_scroll>;
         };
     };
 };
