@@ -282,11 +282,11 @@
             >;
 
             // sensor-bindings = <&rot_kp PG_UP PG_DN>;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN, &inc_dec_kp PG_UP PG_DN>;
             //sensor-bindings = <&right_enc_page>;
         };
 
-        lower_layer {
+        lower_layer { 
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
             // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
@@ -304,7 +304,7 @@
             >;
 
             // sensor-bindings = <&rot_kp C_PREV C_NEXT>;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN, &inc_dec_kp PG_UP PG_DN>;
             //sensor-bindings = <&right_enc_skip>;
         };
 
