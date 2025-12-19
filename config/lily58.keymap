@@ -193,7 +193,7 @@
         right_enc_vol: right_enc_vol {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
 
             label = "right_enc_vol";
         };
