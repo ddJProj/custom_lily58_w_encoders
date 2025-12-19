@@ -265,9 +265,11 @@
                                        &lay3_and_alt  &kp BACKSPACE  &shft_mod1  &gui_and_lay1    &cntrl_andlayer1  &mod_low_shft  &kp SPACE  &ALT_AND_BASE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-            //sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
+            sensor-bindings = <&right_enc_vol>, <&right_enc_page>;
+
+            //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            //sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
             //sensor-bindings = <&right_enc_vol>;
         };
 
@@ -281,8 +283,10 @@
                                          &trans     &trans      &trans       &trans    &trans            &trans            &trans             &trans
             >;
 
+            sensor-bindings = <&right_enc_page>, <&right_enc_vol>;
+
             // sensor-bindings = <&rot_kp PG_UP PG_DN>;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN, &inc_dec_kp PG_UP PG_DN>;
+            // sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN, &inc_dec_kp PG_UP PG_DN>;
             //sensor-bindings = <&right_enc_page>;
         };
 
@@ -303,8 +307,9 @@
                                             &trans             &trans           &trans             &trans          &trans  &trans            &trans             &trans
             >;
 
+            sensor-bindings = <&right_enc_skip>, <&right_enc_skip>;
             // sensor-bindings = <&rot_kp C_PREV C_NEXT>;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN, &inc_dec_kp PG_UP PG_DN>;
+            //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN, &inc_dec_kp PG_UP PG_DN>;
             //sensor-bindings = <&right_enc_skip>;
         };
 
@@ -326,8 +331,8 @@
             >;
 
             // sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
-
-            sensor-bindings = <&right_enc_scroll>;
+            sensor-bindings = <&right_enc_scroll>, <&right_enc_scroll>;
+            // sensor-bindings = <&right_enc_scroll>;
         };
     };
 };
