@@ -193,12 +193,26 @@
         right_enc_vol: right_enc_vol {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
+
+            label = "right_enc_vol";
+        };
+
+        left_enc_vol: left_enc_vol {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
             bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
 
             label = "right_enc_vol";
         };
 
         right_enc_page: right_enc_page {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp PG_UP>, <&kp PG_DN>;
+        };
+
+        left_enc_page: left_enc_page {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp PG_DN>, <&kp PG_UP>;
@@ -267,7 +281,7 @@
 
 
 
-            sensor-bindings = <&right_enc_vol &right_enc_page>;
+            sensor-bindings = <&left_enc_page &right_enc_vol>;
 
             //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
             //sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -284,7 +298,7 @@
                                          &trans     &trans      &trans       &trans    &trans            &trans            &trans             &trans
             >;
 
-            sensor-bindings = <&right_enc_page &right_enc_vol>;
+            sensor-bindings = <&left_enc_vol &right_enc_page>;
 
             // sensor-bindings = <&rot_kp PG_UP PG_DN>;
             // sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN, &inc_dec_kp PG_UP PG_DN>;
