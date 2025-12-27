@@ -203,19 +203,22 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
 
-            label = "right_enc_vol";
+            label = "left_enc_vol";
         };
 
         right_enc_page: right_enc_page {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp PG_UP>, <&kp PG_DN>;
+            label = "right_enc_page";
         };
 
         left_enc_page: left_enc_page {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp PG_DN>, <&kp PG_UP>;
+            label = "left_enc_page";
+
         };
 
         right_enc_skip: right_enc_skip {
