@@ -210,6 +210,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp PG_UP>, <&kp PG_DN>;
+
             label = "right_enc_page";
         };
 
@@ -217,14 +218,15 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp PG_DN>, <&kp PG_UP>;
-            label = "left_enc_page";
 
+            label = "left_enc_page";
         };
 
         right_enc_seek: right_enc_seek {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp F23>, <&kp F24>;
+
             label = "right_enc_seek";
         };
 
@@ -232,6 +234,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp F24>, <&kp F23>;
+
             label = "left_enc_seek";
         };
 
@@ -239,6 +242,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp C_PREV>, <&kp C_NEXT>;
+
             label = "right_enc_skip";
         };
 
@@ -246,6 +250,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
+
             label = "left_enc_skip";
         };
 
@@ -298,7 +303,7 @@
 &kp GRAVE   &kp N1          &kp N2     &kp N3         &kp N4         &kp N5                                         &kp N6         &kp N7     &kp N8         &kp N9  &kp N0  &lay2_and_alt
 &kp ENTER   &kp APOSTROPHE  &kp COMMA  &kp PERIOD     &kp P          &kp Y                                          &kp F          &kp G      &kp C          &kp R   &kp L   &kp ESCAPE
 &kp ESCAPE  &kp A           &kp O      &kp E          &kp U          &kp I                                          &kp D          &kp H      &kp T          &kp N   &kp S   &kp MINUS
-&kp TAB     &kp SEMICOLON   &kp Q      &kp J          &kp K          &kp X       &kp C_PP        &kp C_MUTE  &kp B          &kp M      &kp W          &kp V   &kp Z   &kp EQUAL
+&kp TAB     &kp SEMICOLON   &kp Q      &kp J          &kp K          &kp X       &kp C_PP         &kp C_MUTE        &kp B          &kp M      &kp W          &kp V   &kp Z   &kp EQUAL
                                        &lay3_and_alt  &kp BACKSPACE  &shft_mod1  &gui_and_lay1    &cntrl_andlayer1  &mod_low_shft  &kp SPACE  &ALT_AND_BASE
             >;
 
@@ -312,11 +317,11 @@
         utility_layer {
             display-name = "Utility";
             bindings = <
-&kp GRAVE  &trans           &trans       &trans     &trans      &trans                                   &trans            &trans             &trans          &trans                &trans                 &trans
-&trans     &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT                              &kp CARET         &kp AMPERSAND      &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE
-&trans     &kp LC(A)        &kp LEFT     &kp DOWN   &kp UP      &kp RIGHT                                &kp DELETE        &kp HOME           &kp END         &trans                &trans                 &kp BACKSLASH
-&trans     &kp LC(Y)        &kp LC(Z)    &kp LC(C)  &kp LC(V)   &kp LC(X)    &kp C_MUTE   &kp C_PP   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &trans                 &kp SLASH
-                                         &trans     &trans      &trans       &trans         &trans       &trans            &trans             &trans
+&kp GRAVE  &trans           &trans       &trans     &trans      &trans                               &trans            &trans             &trans          &trans                &trans                 &trans
+&trans     &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT                          &kp CARET         &kp AMPERSAND      &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE
+&trans     &kp LC(A)        &kp LEFT     &kp DOWN   &kp UP      &kp RIGHT                            &kp DELETE        &kp HOME           &kp END         &trans                &trans                 &kp BACKSLASH
+&trans     &kp LC(Y)        &kp LC(Z)    &kp LC(C)  &kp LC(V)   &kp LC(X)    &kp C_MUTE    &kp C_PP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &trans                 &kp SLASH
+                                         &trans     &trans      &trans       &trans        &trans    &trans            &trans             &trans
             >;
 
             sensor-bindings = <&left_enc_vol &right_enc_seek>;
@@ -326,7 +331,7 @@
             //sensor-bindings = <&right_enc_page>;
         };
 
-        lower_layer { 
+        lower_layer {
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
             // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
@@ -336,11 +341,11 @@
 
             display-name = "System";
             bindings = <
-&bt BT_CLR_ALL  &trans         &trans       &trans             &out OUT_TOG     &ext_power EP_TOG                          &ext_power EP_ON  &ext_power EP_TOG  &trans         &trans         &trans         &trans
-&kp F1          &kp F2         &kp F3       &kp F4             &kp F5           &kp F6                                     &kp F7            &kp F8             &kp F9         &kp F10        &kp F11        &kp F12
-&trans          &kp F23        &kp F24      &kp C_PREVIOUS     &kp C_NEXT       &kp C_PP                                   &out OUT_USB      &trans             &bt BT_DISC 3  &bt BT_DISC 2  &bt BT_DISC 1  &bt BT_DISC 0
-&bt BT_CLR      &bt BT_NXT     &trans       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE         &trans          &trans  &trans            &trans             &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0
-                                            &trans             &trans           &trans             &trans          &trans  &trans            &trans             &trans
+&bt BT_CLR_ALL  &trans      &trans   &trans             &out OUT_TOG     &ext_power EP_TOG                    &ext_power EP_ON  &ext_power EP_TOG  &trans         &trans         &trans         &trans
+&kp F1          &kp F2      &kp F3   &kp F4             &kp F5           &kp F6                               &kp F7            &kp F8             &kp F9         &kp F10        &kp F11        &kp F12
+&trans          &kp F23     &kp F24  &kp C_PREVIOUS     &kp C_NEXT       &kp C_PP                             &out OUT_USB      &trans             &bt BT_DISC 3  &bt BT_DISC 2  &bt BT_DISC 1  &bt BT_DISC 0
+&bt BT_CLR      &bt BT_NXT  &trans   &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE         &trans    &trans  &trans            &trans             &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0
+                                     &trans             &trans           &trans             &trans    &trans  &trans            &trans             &trans
             >;
 
             sensor-bindings = <&left_enc_seek &right_enc_skip>;
@@ -360,14 +365,15 @@
 
             display-name = "Games";
             bindings = <
-&mkp MB1  &mkp RCLK     &trans          &trans            &trans       &trans                                       &kp F1       &kp F2          &kp F3        &kp F4          &kp F5           &trans
-&kp F6    &kp NUMBER_1  &kp NUMBER_3    &kp N5            &kp F10      &none                                        &kp F6       &kp F7          &kp F8        &kp F9          &kp F10          &kp F11
-&kp F1    &kp F2        &kp F3          &kp F4            &kp F5       &none                                        &kp F12      &kp F13         &kp F14       &kp F15         &trans           &trans
-&mkp MB1  &kp SPACE     &kp LEFT_SHIFT  &kp LEFT_CONTROL  &trans       &none       &kp CAPSLOCK   &kp CAPSLOCK      &kp KP_PLUS  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
-                                        &trans            &kp F9       &trans      &trans         &trans            &trans       &trans          &trans
+&kp DELETE  &kp T         &kp R           &trans            &trans        &trans                                &kp F1       &kp F2          &kp F3        &kp F4          &kp F5           &trans
+&kp F6      &kp NUMBER_1  &kp NUMBER_3    &kp N5            &kp F10       &kp C                                 &kp F6       &kp F7          &kp F8        &kp F9          &kp F10          &kp F11
+&kp F1      &kp F2        &kp F3          &kp F4            &kp F5        &kp Z                                 &kp F12      &kp F13         &kp F14       &kp F15         &trans           &trans
+&mkp MB1    &kp SPACE     &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &none   &kp CAPSLOCK    &kp CAPSLOCK  &kp KP_PLUS  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+                                          &trans            &kp F9        &trans  &trans          &trans        &trans       &trans          &trans
             >;
 
             sensor-bindings = <&left_enc_skip &right_enc_page>;
+
             // sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
             // sensor-bindings = <&right_enc_scroll>;
         };
